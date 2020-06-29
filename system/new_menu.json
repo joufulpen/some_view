@@ -1,0 +1,496 @@
+﻿{
+    "state": "success",
+    "message": "",
+    "rows": [
+        {
+            "id": "order",
+            "text": "业务管理",
+            "moduleURL": "orderURL",
+            "children": [
+                {
+                    "text": "项目管理",
+                    "id": "projectManage",
+                    "icon": "",
+                    "orderNum": 1,
+                    "url": "saleManage/project-manage",
+                    "moduleURL": "",
+                    "parentId": "业务管理"
+                },
+                {
+                    "text": "订单管理",
+                    "id": "orderManage",
+                    "icon": "",
+                    "orderNum": 2,
+                    "url": "saleManage/order-manage",
+                    "moduleURL": "",
+                    "parentId": "业务管理"
+                },
+                {
+                    "text": "发货管理",
+                    "id": "test2",
+                    "icon": "",
+                    "orderNum": 4,
+                    "url": "saleManage/invoice",
+                    "moduleURL": "",
+                    "parentId": "业务管理"
+                },
+                {
+                    "text": "货柜预定管理",
+                    "id": "test17",
+                    "icon": "",
+                    "orderNum": 5,
+                    "url": "",
+                    "moduleURL": "",
+                    "parentId": "业务管理"
+                }
+            ],
+            "icon": "el-icon-orange",
+            "orderNum": 1,
+            "url": "",
+            "parentId": null
+        },
+        {
+            "id": "purchase",
+            "text": "采购管理",
+            "moduleURL": "purchaseURL",
+            "children": [
+                {
+                    "text": "供应商管理",
+                    "id": "test34",
+                    "icon": "el-icon-share",
+                    "orderNum": 1,
+                    "url": "Supplier",
+                    "moduleURL": "",
+                    "parentId": "采购管理"
+                },
+                {
+                    "text": "采购员管理",
+                    "id": "purchase_Buyer",
+                    "icon": "",
+                    "orderNum": 2,
+                    "url": "Buyer",
+                    "moduleURL": "",
+                    "parentId": "采购管理"
+                },
+                {
+                    "text": "供应商报价",
+                    "id": "test9",
+                    "icon": "",
+                    "orderNum": 3,
+                    "url": "SupplierOffer",
+                    "moduleURL": "",
+                    "parentId": "采购管理"
+                },
+                {
+                    "parentMenu": "采购管理",
+                    "text": "采购订单管理",
+                    "url": "BillPurOrderHdr",
+                    "icon": "",
+                    "orderNum": 4,
+                    "moduleURL": "",
+                    "id": "purchase_MonAug26201917:49:37GMT+0800(中国标准时间)",
+                    "parentId": "采购管理"
+                }
+            ],
+            "icon": "el-icon-picture-outline-round",
+            "orderNum": 2,
+            "url": "",
+            "parentId": null
+        },
+        {
+            "id": "warehouse",
+            "text": "仓库管理",
+            "moduleURL": "warehouseURL",
+            "children": [
+                {
+                    "text": "仓库管理",
+                    "id": "warehouseManage",
+                    "icon": "",
+                    "orderNum": 1,
+                    "url": "warehouseManagement",
+                    "moduleURL": "",
+                    "parentId": "仓库管理"
+                },
+                {
+                    "text": "仓位管理",
+                    "id": "postionManage",
+                    "icon": "",
+                    "orderNum": 2,
+                    "url": "positionManagement",
+                    "moduleURL": "",
+                    "parentId": "仓库管理"
+                },
+                {
+                    "parentMenu": "仓库管理",
+                    "text": "到货单管理",
+                    "url": "PurchaseArrivalHdr",
+                    "icon": "",
+                    "orderNum": 2,
+                    "moduleURL": "",
+                    "id": "warehouse_TueAug13201916:38:23GMT+0800(中国标准时间)",
+                    "parentId": "仓库管理"
+                },
+                {
+                    "parentMenu": "仓库管理",
+                    "text": "进仓单管理",
+                    "url": "inStore",
+                    "icon": "",
+                    "orderNum": 3,
+                    "moduleURL": "",
+                    "id": "warehouse_TueAug27201909:29:03GMT+0800(中国标准时间)",
+                    "parentId": "仓库管理"
+                },
+                {
+                    "parentMenu": "仓库管理",
+                    "text": "出仓单管理",
+                    "url": "outStore",
+                    "icon": "",
+                    "orderNum": 4,
+                    "moduleURL": "",
+                    "id": "warehouse_TueAug27201909:30:12GMT+0800(中国标准时间)",
+                    "parentId": "仓库管理"
+                },
+                {
+                    "parentMenu": "仓库管理",
+                    "text": "库存盘点",
+                    "url": "../stockManage/stockTacking/checkPlan.html",
+                    "icon": "",
+                    "orderNum": 5,
+                    "moduleURL": "",
+                    "id": "warehouse_TueAug27201909:45:02GMT+0800(中国标准时间)",
+                    "parentId": "仓库管理"
+                },
+                {
+                    "parentMenu": "仓库管理",
+                    "text": "调拨管理",
+                    "url": "../stockManage/allotManage/allotManage.html",
+                    "icon": "",
+                    "orderNum": 6,
+                    "moduleURL": "",
+                    "id": "warehouse_TueAug27201909:47:05GMT+0800(中国标准时间)",
+                    "parentId": "仓库管理"
+                },
+                {
+                    "parentMenu": "仓库管理",
+                    "text": "库存管理",
+                    "url": "inventory",
+                    "icon": "",
+                    "orderNum": 7,
+                    "moduleURL": "",
+                    "id": "warehouse_SatAug31201918:34:42GMT+0800(中国标准时间)",
+                    "parentId": "仓库管理"
+                }
+            ],
+            "icon": "el-icon-picture-outline-round",
+            "orderNum": 3,
+            "url": "",
+            "parentId": null
+        },
+        {
+            "id": "basic",
+            "text": "基础资料管理",
+            "moduleURL": "basicsURL",
+            "children": [
+                {
+                    "parentMenu": "基础资料管理",
+                    "text": "数据字典管理",
+                    "url": "BaseProperty",
+                    "icon": "el-icon-menu",
+                    "orderNum": 0,
+                    "moduleURL": "",
+                    "id": "basic_TueAug13201915:18:30GMT+0800(中国标准时间)",
+                    "parentId": "基础资料管理"
+                },
+                {
+                    "text": "员工管理",
+                    "id": "Basic_Employee",
+                    "icon": "",
+                    "orderNum": 1,
+                    "url": "Employee",
+                    "moduleURL": "",
+                    "parentId": "基础资料管理"
+                },
+                {
+                    "text": "部门管理",
+                    "id": "Basic_Department",
+                    "icon": "",
+                    "orderNum": 2,
+                    "url": "Department",
+                    "moduleURL": "",
+                    "parentId": "基础资料管理"
+                },
+                {
+                    "text": "产品资料管理",
+                    "id": "Basic_Goods",
+                    "icon": "",
+                    "orderNum": 3,
+                    "url": "Goods",
+                    "moduleURL": "",
+                    "parentId": "基础资料管理"
+                },
+                {
+                    "text": "物料资料管理",
+                    "id": "Basic_Material",
+                    "icon": "",
+                    "orderNum": 4,
+                    "url": "Material",
+                    "moduleURL": "",
+                    "parentId": "基础资料管理"
+                },
+                {
+                    "text": "客户管理",
+                    "id": "Basic_Customer",
+                    "icon": "",
+                    "orderNum": 5,
+                    "url": "Customer",
+                    "moduleURL": "",
+                    "parentId": "基础资料管理"
+                },
+                {
+                    "text": "银行账户管理",
+                    "id": "Basic_BankAccount",
+                    "icon": "",
+                    "orderNum": 7,
+                    "url": "BankAccount",
+                    "moduleURL": "",
+                    "parentId": "基础资料管理"
+                },
+                {
+                    "text": "公司管理",
+                    "id": "Basic_Company",
+                    "icon": "",
+                    "orderNum": 8,
+                    "url": "Company",
+                    "moduleURL": "",
+                    "parentId": "基础资料管理"
+                },
+                {
+                    "parentMenu": "基础资料管理",
+                    "text": "业务文件表",
+                    "url": "BusinessFile",
+                    "icon": "",
+                    "orderNum": 9,
+                    "moduleURL": "",
+                    "id": "basic_MonAug26201916:27:04GMT+0800(中国标准时间)",
+                    "parentId": "基础资料管理"
+                },
+                {
+                    "parentMenu": "基础资料管理",
+                    "text": "订单评审表",
+                    "url": "DateCalculation",
+                    "icon": "",
+                    "orderNum": 9,
+                    "moduleURL": "",
+                    "id": "basic_MonAug26201916:28:31GMT+0800(中国标准时间)",
+                    "parentId": "基础资料管理"
+                },
+                {
+                    "parentMenu": "基础资料管理",
+                    "text": "订单流程处理比例表",
+                    "url": "FlowScale",
+                    "icon": "",
+                    "orderNum": 9,
+                    "moduleURL": "",
+                    "id": "basic_MonAug26201916:30:31GMT+0800(中国标准时间)",
+                    "parentId": "基础资料管理"
+                },
+                {
+                    "text": "项目城市设置",
+                    "id": "Basic_ShipTime",
+                    "icon": "",
+                    "orderNum": 10,
+                    "url": "ShipTime",
+                    "moduleURL": "",
+                    "parentId": "基础资料管理"
+                },
+                {
+                    "text": "出货口岸设置",
+                    "id": "Basic_Port",
+                    "icon": "",
+                    "orderNum": 11,
+                    "url": "Port",
+                    "moduleURL": "",
+                    "parentId": "基础资料管理"
+                },
+                {
+                    "text": "中英文对照表",
+                    "id": "Basic_EnglishChinese",
+                    "icon": "",
+                    "orderNum": 12,
+                    "url": "EnglishChinese",
+                    "moduleURL": "",
+                    "parentId": "基础资料管理"
+                },
+                {
+                    "text": "业务对象设置",
+                    "id": "Basic_Business",
+                    "icon": "",
+                    "orderNum": 13,
+                    "url": "Business",
+                    "moduleURL": "",
+                    "parentId": "基础资料管理"
+                },
+                {
+                    "text": "附件类型设置",
+                    "id": "Basic_AttachmentFormat",
+                    "icon": "",
+                    "orderNum": 14,
+                    "url": "AttachmentFormat",
+                    "moduleURL": "",
+                    "parentId": "基础资料管理"
+                },
+                {
+                    "text": "发票类型设置",
+                    "id": "Basic_TypeofInvoice",
+                    "icon": "",
+                    "orderNum": 15,
+                    "url": "TypeofInvoice",
+                    "moduleURL": "",
+                    "parentId": "基础资料管理"
+                },
+                {
+                    "text": "结算方式设置",
+                    "id": "Basic_Settlement",
+                    "icon": "",
+                    "orderNum": 16,
+                    "url": "Settlement",
+                    "moduleURL": "",
+                    "parentId": "基础资料管理"
+                },
+                {
+                    "text": "付款方式设置",
+                    "id": "Basic_Payment",
+                    "icon": "",
+                    "orderNum": 17,
+                    "url": "Payment",
+                    "moduleURL": "",
+                    "parentId": "基础资料管理"
+                },
+                {
+                    "text": "包装方式设置",
+                    "id": "Basic_PackageMothod",
+                    "icon": "",
+                    "orderNum": 18,
+                    "url": "PackageMothod",
+                    "moduleURL": "",
+                    "parentId": "基础资料管理"
+                },
+                {
+                    "parentMenu": "基础资料管理",
+                    "text": "物料类型设置",
+                    "url": "TypeofMaterial",
+                    "icon": "",
+                    "orderNum": 19,
+                    "moduleURL": "",
+                    "id": "basic_MonAug26201916:33:23GMT+0800(中国标准时间)",
+                    "parentId": "基础资料管理"
+                },
+                {
+                    "parentMenu": "基础资料管理",
+                    "text": "预付款类型设置",
+                    "url": "Prepayment",
+                    "icon": "",
+                    "orderNum": 20,
+                    "moduleURL": "",
+                    "id": "basic_TueAug13201915:19:38GMT+0800(中国标准时间)",
+                    "parentId": "基础资料管理"
+                },
+                {
+                    "parentMenu": "基础资料管理",
+                    "text": "产品类型设置",
+                    "url": "TypeofProduct",
+                    "icon": "",
+                    "orderNum": 20,
+                    "moduleURL": "",
+                    "id": "basic_MonAug26201916:34:12GMT+0800(中国标准时间)",
+                    "parentId": "基础资料管理"
+                },
+                {
+                    "parentMenu": "基础资料管理",
+                    "text": "基本单位设置",
+                    "url": "UnitSetting",
+                    "icon": "",
+                    "orderNum": 21,
+                    "moduleURL": "",
+                    "id": "basic_MonAug26201917:51:22GMT+0800(中国标准时间)",
+                    "parentId": "基础资料管理"
+                }
+            ],
+            "icon": "el-icon-view",
+            "orderNum": 4,
+            "url": "",
+            "parentId": null
+        },
+        {
+            "id": "productPlan",
+            "text": "生产计划管理",
+            "moduleURL": "productionURL",
+            "children": [
+                {
+                    "parentMenu": "生产计划管理",
+                    "text": "待排产订单列表",
+                    "url": "ProductionSchedulingPlan",
+                    "icon": "",
+                    "orderNum": 0,
+                    "moduleURL": "",
+                    "id": "productPlan_MonAug26201916:02:08GMT+0800(中国标准时间)",
+                    "parentId": "生产计划管理"
+                },
+                {
+                    "parentMenu": "生产计划管理",
+                    "text": "生产计划表",
+                    "url": "ProductionSchedule",
+                    "icon": "",
+                    "orderNum": 1,
+                    "moduleURL": "",
+                    "id": "productPlan_MonAug26201916:01:31GMT+0800(中国标准时间)",
+                    "parentId": "生产计划管理"
+                },
+                {
+                    "parentMenu": "生产计划管理",
+                    "text": "领料申请",
+                    "url": "ApplyMaterialHdr",
+                    "icon": "",
+                    "orderNum": 3,
+                    "moduleURL": "",
+                    "id": "productPlan_MonAug26201917:53:10GMT+0800(中国标准时间)",
+                    "parentId": "生产计划管理"
+                }
+            ],
+            "icon": "el-icon-picture-outline-round",
+            "orderNum": 5,
+            "url": "",
+            "parentId": null
+        },
+        {
+            "id": "authRole",
+            "text": "系统管理",
+            "moduleURL": "",
+            "children": [
+                {
+                    "text": "角色管理",
+                    "id": "role",
+                    "icon": "",
+                    "orderNum": 1,
+                    "url": "views/AuthRole/index.html",
+                    "moduleURL": "",
+                    "parentId": "系统管理"
+                },
+                {
+                    "parentMenu": "系统管理",
+                    "text": "菜单管理",
+                    "url": "views/menu/menu.html",
+                    "icon": "",
+                    "orderNum": 1,
+                    "moduleURL": "",
+                    "id": "authRole_MonAug26201917:31:18GMT+0800(中国标准时间)",
+                    "parentId": "系统管理"
+                }
+            ],
+            "icon": "el-icon-picture-outline-round",
+            "orderNum": 6,
+            "url": "",
+            "parentId": null
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+{
+    "apiName":"system",
+    "editDialogTitle":"新建角色",
+     "width":"650px",
+     "labelWidth":"100px",
+     "formItems": {
+      "form":[
+        {
+        "type":"input",
+        "value":"",
+        "label":"编号",
+        "name":"id",
+        "disabled":true,
+        "style": {
+          "width":"50%"
+        }
+      },
+      {
+        "type":"input",
+        "value":"",
+        "label":"名称",
+        "name":"name",
+        "style": {
+          "width":"50%"
+        },
+        "rules":{
+          "required":true,
+          "message":"姓名不能为空",
+          "trigger":"change"
+        }
+      },
+      {
+        "type":"switch",
+        "value":"",
+        "label":"是否可用",
+        "name":"active"
+      }]
+  }
+}

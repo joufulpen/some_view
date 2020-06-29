@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <title>ERP管理系统</title>
+    <link rel="stylesheet" href="/css/index.css" />
+    <script src="/settings.js"></script>
+    <style>
+      .logo {
+        width: 250px;
+        line-height: 40px;
+        font-size: 18px;
+        font-weight: bolder;
+        padding-left: 1em;
+      }
+      .el-table__body-wrapper {
+        overflow: auto;
+      }
+      .el-submenu__title i[class*=' el-icon-'],
+      .el-submenu__title i[class^='el-icon-'] {
+        color: #409eff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root">
+      <el-container :style="coolFilters">
+        <el-header height="auto" v-show="!isHeaderCollapse">
+          <el-container>
+            <el-main class="logo"> ERP管理系统 </el-main>
+            <el-aside width="auto">
+              <template v-if="warehouses">
+                当前仓库：
+                <el-radio-group size="mini" v-model="globalVars.WHID">
+                  <el-radio-button v-for="(val, key) in warehouses" :key="key" :label="key">{{val}}</el-radio-button>
+                </el-radio-group>
+              </template>
+              <el-dropdown trigger="click" @command="handleCommand">
+                <el-button type="text"> {{ employee }}<i class="el-icon-arrow-down el-icon--right"></i> </el-button>
+                <el-dropdown-menu slot="dropdown">
+                  <el-dropdown-item>
+                    <el-collapse style="width: 300px;" @click.native="$event.stopPropagation()">
+                      <el-collapse-item>
+                        <el-container slot="title">
+                          <el-main>
+                            <el-button-group>
+                              <el-button
+                                plain
+                                type="primary"
+                                size="mini"
+                                @click.native="$event.stopPropagation()"
+                                @click="filters={invert:false,hue:0,brightness:0,saturate:0,contrast:0}"
+                                >明蓝</el-button
+                              >
+                              <el-button
+                                plain
+                                type="success"
+                                size="mini"
+                                @click.native="$event.stopPropagation()"
+                                @click="filters={invert:false,hue:240,brightness:0.4,saturate:0.4,contrast:-0.8}"
+                                >明绿</el-button
+                              >
+                              <el-button
+                                type="primary"
+                                size="mini"
+                                @click.native="$event.stopPropagation()"
+                                @click="filters={invert:true,hue:0,brightness:0.4,saturate:-0.4,contrast:-0.2}"
+                                >暗蓝</el-button
+                              >
+                              <el-button
+                                type="success"
+                                size="mini"
+                                @click.native="$event.stopPropagation()"
+                                @click="filters={invert:true,hue:240,brightness:1.6,saturate:1.6,contrast:0.4}"
+                                >暗绿</el-button
+                              >
+                            </el-button-group>
+                          </el-main>
+                          <el-aside style="width: auto;">微调</el-aside>
+                        </el-container>
+                        <div>暗色 <el-switch v-model="filters.invert"></el-switch></div>
+                        <div>
+                          色调
+                          <el-slider style="width: 200px; display: inline-block;" :show-tooltip="false" v-model="filters.hue" :min="0" :max="360"></el-slider>
+                        </div>
+                        <div>
+                          亮度
+                          <el-slider
+                            style="width: 200px; display: inline-block;"
+                            :show-tooltip="false"
+                            v-model="filters.brightness"
+                            :min="-2"
+                            :max="2"
+                            :step="0.4"
+                            show-stops
+                          ></el-slider>
+                        </div>
+                        <div>
+                          饱和
+                          <el-slider
+                            style="width: 200px; display: inline-block;"
+                            :show-tooltip="false"
+                            v-model="filters.saturate"
+                            :min="-2"
+                            :max="2"
+                            :step="0.4"
+                            show-stops
+                          ></el-slider>
+                        </div>
+                        <div>
+                          对比
+                          <el-slider
+                            style="width: 200px; display: inline-block;"
+                            :show-tooltip="false"
+                            v-model="filters.contrast"
+                            :min="-1"
+                            :max="1"
+                            :step="0.2"
+                            show-stops
+                          ></el-slider>
+                        </div>
+                      </el-collapse-item> </el-collapse
+                  ></el-dropdown-item>
+                  <el-dropdown-item command="passwordReset">修改密码</el-dropdown-item>
+                  <el-dropdown-item command="logOut">退出登录</el-dropdown-item>
+                </el-dropdown-menu>
+              </el-dropdown>
+            </el-aside>
+          </el-container>
+        </el-header>
+        <el-header height="auto">
+          <el-button size="mini" class="header-collapse-button" @click="isHeaderCollapse=!isHeaderCollapse"></el-button>
+        </el-header>
+        <el-main>
+          <el-container class="content">
+            <el-aside width="auto" class="aside-menu">
+              <el-menu mode="vertical" unique-opened @select="selectMenu" :collapse="isMenuCollapse" :default-active="currentTab">
+                <el-submenu v-for="submenu in menu" :key="submenu.index" :index="submenu.id">
+                  <template slot="title">
+                    <!-- <i :class="submenu.icon"></i> -->
+                    <svg class="indexIcon" aria-hidden="true">
+                      <use :xlink:href="submenu.icon"></use>
+                    </svg>
+                    <span style="font-weight: bolder; font-size: 15px;">{{ submenu.text }}</span>
+                  </template>
+                  <el-menu-item v-for="item in submenu.children" :key="item.index" :index="item.id">
+                    <template>{{ item.text }}</template>
+                  </el-menu-item>
+                </el-submenu>
+              </el-menu>
+            </el-aside>
+            <el-aside width="auto" style="z-index: 1;">
+              <el-button size="mini" class="menu-collapse-button" @click="isMenuCollapse=!isMenuCollapse"></el-button>
+            </el-aside>
+            <el-main class="main-tabs">
+              <el-tabs type="border-card" v-model="currentTab" @tab-remove="removeTab">
+                <el-tab-pane v-for="item in tabs" :closable="item.closable!=undefined?item.closable:true" :key="item.id" :label="item.text" :name="item.id">
+                  <iframe :src="takeToken(item)" v-if="item.url !==''" :id="item.id"></iframe>
+                  <!-- item.attributes.url + '#' + token -->
+                </el-tab-pane>
+              </el-tabs>
+            </el-main>
+          </el-container>
+        </el-main>
+      </el-container>
+    </div>
+  </body>
+</html>

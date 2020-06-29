@@ -1,0 +1,30 @@
+﻿{
+	"singleTableData":{
+      "cellStyle": {
+        "height": "30px",
+        "padding": "5px 0"
+        },
+      "data": [],
+      "total": 0,
+      "currentPage": 1,
+      "pageSize": 10,
+      "showPage":true,
+      "columns": [{
+          "type": "selection"
+        }, {
+          "type": "index",
+          "prop": "index",
+          "label": "序号",
+          "fixed": "fixed",
+          "width": "50px"
+        },
+        {
+          "prop": "id",
+          "label": "编码"
+        }, {
+          "prop": "name",
+          "label": "名称"
+        }
+        ]
+            }
+}

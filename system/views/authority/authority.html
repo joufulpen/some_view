@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>权限分配</title>
+  <style>
+    [v-cloak] {
+      display: none !important;
+    }
+  </style>
+  <!-- <script src="../../scripts/cool-master/cool-master.js"></script> -->
+  <script src="/settings.js"></script>
+</head>
+
+<body>
+  <div id="root" v-cloak>
+    <el-table class="authority" :data="apps">
+      <!-- 自定义展开内容（内部表格） -->
+      <el-table-column type="expand">
+        <template slot-scope="{row:{appid,loading}}">
+          <el-checkbox-group v-model="selection.find(s=>s.appid==appid).claims">
+            <el-table :data="getResources(appid)" v-loading="loading">
+              <el-table-column prop="resource" show-overflow-tooltip>
+                <template slot="header" slot-scope="scope">
+                  <el-button type="text" @click="selectAll(appid)">全选/全不选</el-button>
+                </template>
+              </el-table-column>
+              <el-table-column v-for="{action} in getActions(appid)" :label="action" :key="'col_'+action">
+                <template slot-scope="{row:{resource},column:{label:action}}">
+                  <el-checkbox :disabled="getDisabled(appid, resource, action)" :label="getLabel(appid, resource, action)">&nbsp;</el-checkbox>
+                </template>
+              </el-table-column>
+            </el-table>
+          </el-checkbox-group>
+        </template>
+      </el-table-column>
+      <!-- 外部表格内容 -->
+      <el-table-column label="系统模块" prop="appid">
+      </el-table-column>
+      <el-table-column label="备注" prop="description">
+      </el-table-column>
+    </el-table>
+    <el-button type="primary" v-loading="apps.some(a=>a.loading)" @click="saveClick">保存</el-button>
+  </div>
+</body>
+
+</html>

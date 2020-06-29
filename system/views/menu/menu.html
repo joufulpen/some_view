@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta charset="utf-8" />
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  <title>系统菜单</title>
+  <!-- <script src="../../scripts/cool-master/cool-master.js"></script> -->
+  <!-- <script type="post-load" src="../../scripts/components/tree-table.js"></script> -->
+  <!-- <script type="post-load" src="../../scripts/components/button-group.js"></script> -->
+  <!-- <link rel="stylesheet" href="/css/tree-table.css"> -->
+  <script src="/settings.js"></script>
+</head>
+
+<body>
+  <div id="root">
+    <el-container>
+      <el-header height="28px">
+        <cool-button-group :buttons="buttons" @button-click="buttonsevent"></cool-button-group>
+      </el-header>
+      <el-main ref="container">
+        <cool-table-view :data="data" :columns="columns" border @table-selection-change="handleSelectionChange"></cool-table-view>
+      </el-main>
+      <!-- 菜单新建编辑弹窗 -->
+      <el-dialog :title="menuDialogTitle" :visible.sync="dialogVisible" width="480px" @close="close" :close-on-click-modal="false" :close-on-press-escape="false">
+        <div style="border:1px solid #DCDFE6">
+          <cool-form-view ref="formView" :form-items="formItems" @update-form="getForm" size="mini" label-width="120px" @focus-event="clickEvents"></cool-form-view>
+        </div>
+        <div slot="footer">
+          <cool-save-button save-btn-text="保 存" back-btn-text="取 消" @save-event="submit" @back-event="close"></cool-save-button>
+        </div>
+        <!-- <el-button @click="close" size="mini" style="border-top: none">取 消</el-button>
+          <el-button @click="submit" size="mini" style="float:right;border-top: none">保 存</el-button> -->
+      </el-dialog>
+      <!--选取icon弹窗 -->
+      <el-dialog :visible.sync="iconDialogVisible" width="400px" :close-on-click-modal="false" :close-on-press-escape="false">
+        <i :class="icon.class" v-for="icon in icons" @click='iconClick' style="padding: 10px;
+        font-size: 18px"></i>
+      </el-dialog>
+    </el-container>
+  </div>
+</body>
